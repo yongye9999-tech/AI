@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.next/
+.turbo/
+*.db
+*.db-journal
+.env
+.env.local
+coverage/
+playwright/.cache/
+data/
