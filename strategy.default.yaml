@@ -1,0 +1,24 @@
+mode: paper
+sentiment:
+  windowHours: 12
+  minUniqueAuthors: 5
+  botDownweight: 0.5
+market:
+  minQuoteVolume24hUsd: 5000000
+  volumeSurgeThreshold: 2.0
+  maxChaseReturn24h: 0.15
+  maxReturn24hForH2: 0.08
+signal:
+  scoreThreshold: 65
+  minReturn24hLong: 0.02
+risk:
+  maxLossPerTradeUsd: 200
+  maxDailyLossUsd: 600
+  maxOpenPositions: 3
+  maxLeverage: 5
+  maxRiskPerTradePct: 0.02
+  cooldownMinutes: 30
+  defaultStopLossPct: 0.05
+execution:
+  slippageBps: 5
+  takerFeePct: 0.0004

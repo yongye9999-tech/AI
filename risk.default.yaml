@@ -1,0 +1,7 @@
+maxLossPerTradeUsd: 200
+maxDailyLossUsd: 600
+maxOpenPositions: 3
+maxLeverage: 5
+maxRiskPerTradePct: 0.02
+cooldownMinutes: 30
+defaultStopLossPct: 0.05

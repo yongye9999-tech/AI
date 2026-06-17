@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "ai-trading": {
+      "command": "pnpm",
+      "args": ["--dir", "D:/AI/mcp-server", "dev"],
+      "env": {
+        "API_URL": "http://localhost:3001"
+      }
+    }
+  }
+}
