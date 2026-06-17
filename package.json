@@ -1,31 +1,25 @@
 {
-  "name": "ai-trading-stack",
+  "name": "@ai-trading/web",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "test": "turbo run test",
-    "lint": "turbo run lint",
-    "db:push": "pnpm --filter @ai-trading/db db:push",
-    "db:studio": "pnpm --filter @ai-trading/db db:studio",
-    "demo": "pnpm exec tsx scripts/demo.ts"
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000"
   },
   "dependencies": {
-    "@ai-trading/backtest": "workspace:*",
-    "@ai-trading/db": "workspace:*",
-    "@ai-trading/execution": "workspace:*",
-    "@ai-trading/risk": "workspace:*",
-    "@ai-trading/shared": "workspace:*",
-    "@ai-trading/signals": "workspace:*"
+    "next": "^15.3.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "recharts": "^2.15.3"
   },
   "devDependencies": {
     "@types/node": "^22.15.32",
-    "tsx": "^4.20.3",
-    "turbo": "^2.5.4",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3"
-  },
-  "packageManager": "pnpm@11.6.0",
-  "engines": {
-    "node": ">=20"
   }
 }
