@@ -1,0 +1,92 @@
+{
+  "lastValidatedTimestamp": 1781592933878,
+  "projects": {
+    "D:\\AI": {
+      "name": "ai-trading-stack"
+    },
+    "D:\\AI\\apps\\api": {
+      "name": "@ai-trading/api",
+      "version": "0.1.0"
+    },
+    "D:\\AI\\apps\\web": {
+      "name": "@ai-trading/web",
+      "version": "0.1.0"
+    },
+    "D:\\AI\\mcp-server": {
+      "name": "@ai-trading/mcp-server",
+      "version": "0.1.0"
+    },
+    "D:\\AI\\packages\\backtest": {
+      "name": "@ai-trading/backtest",
+      "version": "0.1.0"
+    },
+    "D:\\AI\\packages\\collector-market": {
+      "name": "@ai-trading/collector-market",
+      "version": "0.1.0"
+    },
+    "D:\\AI\\packages\\collector-square": {
+      "name": "@ai-trading/collector-square",
+      "version": "0.1.0"
+    },
+    "D:\\AI\\packages\\db": {
+      "name": "@ai-trading/db",
+      "version": "0.1.0"
+    },
+    "D:\\AI\\packages\\execution": {
+      "name": "@ai-trading/execution",
+      "version": "0.1.0"
+    },
+    "D:\\AI\\packages\\polymarket": {
+      "name": "@ai-trading/polymarket",
+      "version": "0.1.0"
+    },
+    "D:\\AI\\packages\\risk": {
+      "name": "@ai-trading/risk",
+      "version": "0.1.0"
+    },
+    "D:\\AI\\packages\\shared": {
+      "name": "@ai-trading/shared",
+      "version": "0.1.0"
+    },
+    "D:\\AI\\packages\\signals": {
+      "name": "@ai-trading/signals",
+      "version": "0.1.0"
+    }
+  },
+  "pnpmfiles": [],
+  "settings": {
+    "allowBuilds": {
+      "better-sqlite3": "set this to true or false",
+      "esbuild": "set this to true or false",
+      "sharp": "set this to true or false"
+    },
+    "autoInstallPeers": true,
+    "catalogs": {},
+    "dedupeDirectDeps": false,
+    "dedupeInjectedDeps": true,
+    "dedupePeerDependents": true,
+    "dedupePeers": false,
+    "dev": true,
+    "excludeLinksFromLockfile": false,
+    "hoistPattern": [
+      "*"
+    ],
+    "hoistWorkspacePackages": true,
+    "injectWorkspacePackages": false,
+    "linkWorkspacePackages": false,
+    "minimumReleaseAge": 1440,
+    "minimumReleaseAgeIgnoreMissingTime": true,
+    "nodeLinker": "isolated",
+    "optional": true,
+    "peersSuffixMaxLength": 1000,
+    "preferWorkspacePackages": false,
+    "production": true,
+    "publicHoistPattern": [],
+    "workspacePackagePatterns": [
+      "apps/*",
+      "packages/*",
+      "mcp-server"
+    ]
+  },
+  "filteredInstall": false
+}
