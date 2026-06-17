@@ -1,19 +1,28 @@
 {
-  "name": "@ai-trading/mcp-server",
+  "name": "@ai-trading/backtest",
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "tsc",
-    "dev": "tsx src/index.ts",
-    "start": "node dist/index.js"
+    "dev": "tsc --watch",
+    "test": "node --import tsx --test src/**/*.test.ts"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.13.1",
-    "zod": "^3.25.67"
+    "@ai-trading/collector-market": "workspace:*",
+    "@ai-trading/shared": "workspace:*",
+    "@ai-trading/signals": "workspace:*"
   },
   "devDependencies": {
-    "@types/node": "^22.15.32",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   }
