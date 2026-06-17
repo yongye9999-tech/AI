@@ -1,102 +1,50 @@
-# AI Trading Stack
 
-Objective, rule-based trading research platform inspired by [Binance sentiment + momentum strategies](https://www.youtube.com/watch?v=mX6lXiJe_24). **Paper trading by default** — not a get-rich-quick bot.
+# TypeScript
 
-## Features
+[![CI](https://github.com/microsoft/TypeScript/actions/workflows/ci.yml/badge.svg)](https://github.com/microsoft/TypeScript/actions/workflows/ci.yml)
+[![npm version](https://badge.fury.io/js/typescript.svg)](https://www.npmjs.com/package/typescript)
+[![Downloads](https://img.shields.io/npm/dm/typescript.svg)](https://www.npmjs.com/package/typescript)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/microsoft/TypeScript/badge)](https://securityscorecards.dev/viewer/?uri=github.com/microsoft/TypeScript)
 
-- **Binance Square** sentiment collection (Playwright + bot heuristics)
-- **Market data** via official Binance Futures API (volume surge, momentum)
-- **Rule signal engine** H1 (sentiment) + H2 (volume) with composite scoring
-- **Risk engine** — fixed USD loss per trade, daily limits, cooldowns
-- **Paper / approve execution** modes
-- **Walk-forward backtest** with Sharpe / MaxDD gates
-- **Next.js dashboard** — signals, square radar, backtest, Polymarket explorer
-- **MCP server** for Hermes Agent integration
 
-## Quick Start
+[TypeScript](https://www.typescriptlang.org/) is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript. Try it out at the [playground](https://www.typescriptlang.org/play/), and stay up to date via [our blog](https://blogs.msdn.microsoft.com/typescript) and [Twitter account](https://twitter.com/typescript).
 
-```bash
-# Install dependencies
-pnpm install --ignore-scripts
+Find others who are using TypeScript at [our community page](https://www.typescriptlang.org/community/).
 
-# Copy env and push DB schema
-cp .env.example .env
-pnpm db:push
+## Installing
 
-# Build all packages
-pnpm build
-
-# Offline demo (no Binance network required)
-pnpm demo
-
-# Run API + Web (two terminals)
-pnpm --filter @ai-trading/api dev
-pnpm --filter @ai-trading/web dev
-```
-
-- API: http://localhost:3001
-- Web: http://localhost:3000
-
-## Offline Demo
-
-Runs synthetic market + square data through signal engine, risk, paper execution, and backtest:
+For the latest stable version:
 
 ```bash
-pnpm build
-pnpm demo
+npm install -D typescript
 ```
 
-Output saved to `data/demo.db`.
-
-## Run Pipeline (live)
-
-Requires Binance API access and Playwright (`pnpm --filter @ai-trading/collector-square exec playwright install chromium`):
+For our nightly builds:
 
 ```bash
-curl -X POST http://localhost:3001/api/pipeline/run
+npm install -D typescript@next
 ```
 
-## Backtest
+## Contribute
 
-```bash
-curl -X POST http://localhost:3001/api/backtest/run \
-  -H "Content-Type: application/json" \
-  -d '{"symbol":"BTCUSDT"}'
-```
+There are many ways to [contribute](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md) to TypeScript.
+* [Submit bugs](https://github.com/microsoft/TypeScript/issues) and help us verify fixes as they are checked in.
+* Review the [source code changes](https://github.com/microsoft/TypeScript/pulls).
+* Engage with other TypeScript users and developers on [StackOverflow](https://stackoverflow.com/questions/tagged/typescript).
+* Help each other in the [TypeScript Community Discord](https://discord.gg/typescript).
+* Join the [#typescript](https://twitter.com/search?q=%23TypeScript) discussion on Twitter.
+* [Contribute bug fixes](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md).
 
-## Hermes MCP
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see
+the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com)
+with any additional questions or comments.
 
-See [configs/HERMES.md](configs/HERMES.md) for full setup. Quick config in [configs/hermes-mcp.json](configs/hermes-mcp.json):
+## Documentation
 
-```json
-{
-  "mcpServers": {
-    "ai-trading": {
-      "command": "node",
-      "args": ["D:/AI/mcp-server/dist/index.js"],
-      "env": { "API_URL": "http://localhost:3001" }
-    }
-  }
-}
-```
+*  [TypeScript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+*  [Programming handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+*  [Homepage](https://www.typescriptlang.org/)
 
-Build MCP first: `pnpm --filter @ai-trading/mcp-server build`
+## Roadmap
 
-Tools: `get_latest_signals`, `run_backtest`, `explain_symbol_sentiment`, `list_polymarket_markets`, `run_signal_pipeline`, `get_portfolio`
-
-## Architecture
-
-```
-collector-square ─┐
-collector-market ─┼─► signals ─► risk ─► execution ─► db
-                  │                              ▲
-                  └──────── backtest ────────────┘
-                         API ◄── Web / MCP
-```
-
-## Disclaimer
-
-- Past backtest performance does not guarantee future results
-- Binance Square scraping may violate ToS — use at your own risk, low frequency only
-- Polymarket availability varies by jurisdiction
-- Never enable `live` mode without testnet validation
+For details on our planned features and future direction, please refer to our [roadmap](https://github.com/microsoft/TypeScript/wiki/Roadmap).
